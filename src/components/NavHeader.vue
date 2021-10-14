@@ -1,62 +1,28 @@
 <template>
-    <v-app-bar
-        app
-        dark
-    >
-        <h1 class="title mr-10">
-            <span class="font-weight-bold">Stock</span> 
-            <span class="font-weight-light">Trader</span> 
-        </h1>
+    <v-app-bar app dark>
+        <v-toolbar flat>
+            <v-toolbar-title class="mr-10">
+                <span class="font-weight-bold">Stock</span> 
+                <span class="font-weight-light">Trader</span> 
+            </v-toolbar-title>
 
-        <v-list class="d-flex menu-items" flat color="transparent">
-            <v-list-item 
-                active-class="active-menu-item" 
-                class="menu-item"
-                to="/"
-            >
-                Início
-            </v-list-item>
+            <v-toolbar-items class="menu-items">
+                <v-btn depressed to="/"> Início </v-btn>
+                <v-btn depressed to="/portfolio"> Portfólio </v-btn>
+                <v-btn depressed to="/stocks"> Ações </v-btn>
+            </v-toolbar-items>
 
-            <v-list-item 
-                active-class="active-menu-item" 
-                class="menu-item"
-                to="/portfolio"
-            >
-                Portfólio
-            </v-list-item>
+            <v-spacer/>
 
-            <v-list-item 
-                active-class="active-menu-item" 
-                class="menu-item" 
-                to="/stocks"
-            >
-                Ações
-            </v-list-item>
-        </v-list>
-
-        <v-spacer/>
-
-        <v-list class="d-flex menu-items" flat color="transparent">
-            <v-list-item 
-                class="menu-item body-2" 
-            >
-                Finalizar dia
-            </v-list-item>
-
-            <v-list-item 
-                class="menu-item body-2" 
-            >
-                Salvar e carregar
-            </v-list-item>
-
-            <v-list-item 
-                class="menu-item body-2" 
-            >
-                Saldo: R$10.000,00
-            </v-list-item>
-        </v-list>
-        
+            <v-toolbar-items class="menu-items" color="transparent">
+                <v-btn depressed class="body-2" > Finalizar dia </v-btn>
+                <v-btn depressed class="body-2" > Salvar e carregar </v-btn>
+                <v-btn depressed class="body-2"> Saldo: R$10.000,00 </v-btn>
+            </v-toolbar-items>
+            
+        </v-toolbar>
     </v-app-bar>
+
 </template>
 
 <script>
@@ -66,9 +32,5 @@ export default {
 </script>
 
 <style>
-    .active-menu-item,
-    .menu-item:hover{
-        filter: brightness(70%);
-        transition: .2s ease-in-out;
-    }
+
 </style>
