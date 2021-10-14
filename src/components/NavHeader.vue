@@ -15,8 +15,20 @@
             <v-spacer/>
 
             <v-toolbar-items class="menu-items" color="transparent">
-                <v-btn depressed class="body-2" > Finalizar dia </v-btn>
-                <v-btn depressed class="body-2" > Salvar e carregar </v-btn>
+                <v-btn depressed class="body-2"> Finalizar dia </v-btn>
+                <v-menu open-on-hover dark transition="scale-transition" offset-y="10">
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn depressed class="body-2" v-on="on" v-bind="attrs" > Salvar & carregar </v-btn>
+                    </template>
+                    <v-list>
+                        <v-list-item>
+                            <v-list-tile-title>Salvar dados</v-list-tile-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-tile-title>Carregar dados</v-list-tile-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
                 <v-btn depressed class="body-2"> Saldo: R$10.000,00 </v-btn>
             </v-toolbar-items>
             
