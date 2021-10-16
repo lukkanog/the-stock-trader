@@ -22,10 +22,10 @@
                     </template>
                     <v-list>
                         <v-list-item>
-                            <v-list-tile-title>Salvar dados</v-list-tile-title>
+                            <v-list-item-title>Salvar dados</v-list-item-title>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-tile-title>Carregar dados</v-list-tile-title>
+                            <v-list-item-title>Carregar dados</v-list-item-title>
                         </v-list-item>
                     </v-list>
                 </v-menu>
