@@ -2,7 +2,7 @@
   <v-app>
     <NavHeader/>
     <v-content>
-      <v-container>
+      <v-container class="pt-10">
         <router-view/>
       </v-container>
     </v-content>
