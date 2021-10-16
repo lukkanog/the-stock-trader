@@ -16,7 +16,7 @@
 
             <v-toolbar-items class="menu-items" color="transparent">
                 <v-btn depressed class="body-2"> Finalizar dia </v-btn>
-                <v-menu open-on-hover dark transition="scale-transition" offset-y="10">
+                <v-menu open-on-hover dark transition="scale-transition" :offset-y="true">
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn depressed class="body-2" v-on="on" v-bind="attrs" > Salvar & carregar </v-btn>
                     </template>
