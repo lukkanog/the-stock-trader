@@ -2,7 +2,7 @@
     <v-flex class="pr-3 pb-3" xs12 md6 lg4>
         <v-card>
             <v-card-title class="headline">
-               <strong>AÇÃO <small>(Preço: Preço)</small></strong>
+               <strong>{{stock.name}} <small class="font-weight-light">{{stock.price}}</small></strong>
             </v-card-title>
         </v-card>
         <v-card>
@@ -16,7 +16,10 @@
 
 <script>
 export default {
-
+    props: [
+        'stock'
+    ],
+    
 }
 </script>
 
