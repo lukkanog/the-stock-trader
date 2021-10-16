@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app dark>
+    <v-app-bar app>
         <v-toolbar flat>
             <v-toolbar-title class="mr-10">
                 <span class="font-weight-bold">Stock</span> 
