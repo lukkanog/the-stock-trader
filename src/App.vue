@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <NavHeader/>
+    <nav-header/>
     <v-content>
       <v-container class="pt-10">
         <router-view/>
