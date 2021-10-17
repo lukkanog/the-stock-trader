@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
 import Stock from "../components/Stock.vue"
 
 export default {
@@ -13,9 +14,7 @@ export default {
     Stock
   },
   computed: {
-    stocks() {
-      return this.$store.getters.stocks
-    }
+    ...mapGetters(["stocks"])
   }
 }
 </script>
