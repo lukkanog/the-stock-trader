@@ -6,7 +6,7 @@
             </v-card-title>
         </v-card>
         <v-card tile>
-            <v-container fill-height>
+            <v-container v-if="!stock.portfolio" fill-height >
                 <v-text-field 
                     type="number" 
                     label="Quantidade"
@@ -20,20 +20,45 @@
                 >
                     Comprar
                 </v-btn>
+                
+            </v-container>
+            <v-container v-else fill-height >
+                <v-text-field 
+                    type="number" 
+                    label="Quantidade"
+                    v-model.number="quantity"
+                    color="teal lighten-2"
+                />
+                <v-btn 
+                    class="teal darken-2 white--text ml-5"
+                    @click="sellStock"
+                    :disabled="quantity <= 0"
+                >
+                    Vender
+                </v-btn>
             </v-container>
         </v-card>
     </v-flex>
 </template>
 
 <script>
+import { mapActions } from "vuex"
+
 export default {
-    props: [
-        'stock'
-    ],
+    props: {
+        stock: {
+            type: Object
+        },
+        portfolio: {
+            type: Boolean,
+            default: false
+        }
+    },
     data: () => ({
         quantity: 0,
     }),
     methods: {
+        ...mapActions({buyStockAction: "buyStock", sellStockAction: "sellStock"}),
         buyStock() {
             const order = {
                 stockId: this.stock.id,
@@ -41,8 +66,23 @@ export default {
                 quantity: this.quantity
             }
 
-            console.log(order)
+            this.buyStockAction(order)
+
             this.quantity = 0
+        },
+        sellStock() {
+            const order = {
+                stockId: this.stock.id,
+                stockPrice: this.stock.price,
+                quantity: this.quantity
+            }
+
+            this.sellStockAction(order)
+        }
+    },
+    mounted() {
+        if (this.stock.portfolio) {
+            this.quantity = this.stock.quantity
         }
     },
     filters: {
