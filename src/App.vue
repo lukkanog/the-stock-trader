@@ -16,6 +16,9 @@ export default {
   name: 'App',
   components: {
     NavHeader
+  },
+  mounted() {
+    this.$store.dispatch("initStocks")
   }
 };
 </script>
