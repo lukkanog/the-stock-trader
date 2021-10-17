@@ -5,12 +5,12 @@ export default {
     },
     mutations: {
         buyStock(state, { stockId, quantity, stockPrice }) {
-            const isStockInPortfolio = state.stocks.find(stock => stock.id === stockId)
+            const stockInPortfolio = state.stocks.find(stock => stock.id === stockId)
 
             state.funds -= stockPrice * quantity
 
-            if (isStockInPortfolio) {
-                record.quantity += quantity
+            if (stockInPortfolio) {
+                stockInPortfolio.quantity += quantity
                 return
             }
 
@@ -25,7 +25,7 @@ export default {
             state.funds += stockPrice * quantity
 
             if (stockInPortfolio.quantity > quantity) {
-                record.quantity -= quantity
+                stockInPortfolio.quantity -= quantity
             }
 
             const stockToBeRemoved = state.stocks.indexOf(stockInPortfolio)
