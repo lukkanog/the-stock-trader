@@ -26,6 +26,7 @@ export default {
 
             if (stockInPortfolio.quantity > quantity) {
                 stockInPortfolio.quantity -= quantity
+                return
             }
 
             const stockToBeRemoved = state.stocks.indexOf(stockInPortfolio)
