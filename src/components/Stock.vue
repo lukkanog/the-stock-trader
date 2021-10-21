@@ -92,13 +92,6 @@ export default {
             this.quantity = this.stock.quantity
         }
     },
-    filters: {
-        money(val) {
-            const decimalValue = val.toFixed(2)
-            const valueWithComma = decimalValue.toString().replace(".",",")
-            return `R$${valueWithComma}`
-        }
-    }
 }
 </script>
 
