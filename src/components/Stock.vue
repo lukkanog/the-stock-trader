@@ -87,6 +87,11 @@ export default {
             this.quantity = this.stock.quantity
         }
     },
+    updated() {
+        if (this.stock.portfolio && this.quantity > this.stock.quantity) {
+            this.quantity = this.stock.quantity
+        }
+    },
     filters: {
         money(val) {
             const decimalValue = val.toFixed(2)
