@@ -78,6 +78,8 @@ export default {
             }
 
             this.sellStockAction(order)
+            
+            this.quantity = this.stock.quantity -= this.quantity
         }
     },
     mounted() {
