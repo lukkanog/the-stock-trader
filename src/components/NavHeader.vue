@@ -29,7 +29,7 @@
                         </v-list-item>
                     </v-list>
                 </v-menu>
-                <v-btn depressed class="body-2"> Saldo: R$10.000,00 </v-btn>
+                <v-btn depressed class="body-2"> Saldo: {{ funds | money }} </v-btn>
             </v-toolbar-items>
             
         </v-toolbar>
@@ -38,8 +38,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+
 export default {
-    name: "NavHeader"
+    name: "NavHeader",
+    computed: {
+        ...mapGetters(["funds"])
+    }
 }
 </script>
 
