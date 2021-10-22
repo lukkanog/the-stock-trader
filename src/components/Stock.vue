@@ -4,6 +4,9 @@
             <v-card-title class="headline">
                <strong>{{stock.name}} <small class="font-weight-light">{{stock.price | money}}</small></strong>
             </v-card-title>
+            <v-card-subtitle v-if="stock.portfolio" class="font-weight-light">
+                Quantidade de ações adquiridas: <strong class="white--text">{{ this.stock.quantity }}</strong>
+            </v-card-subtitle>
         </v-card>
         <v-card tile>
             <v-container v-if="!stock.portfolio" fill-height >
@@ -16,7 +19,7 @@
                 <v-btn 
                     class="purple darken-3 white--text ml-5"
                     @click="buyStock"
-                    :disabled="quantity <= 0"
+                    :disabled="!canUserBuyStock"
                 >
                     Comprar
                 </v-btn>
@@ -32,7 +35,7 @@
                 <v-btn 
                     class="teal darken-2 white--text ml-5"
                     @click="sellStock"
-                    :disabled="quantity <= 0"
+                    :disabled="!canUserSellStock"
                 >
                     Vender
                 </v-btn>
@@ -42,7 +45,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex"
+import { mapActions, mapGetters } from "vuex"
 
 export default {
     props: {
@@ -57,6 +60,25 @@ export default {
     data: () => ({
         quantity: 0,
     }),
+    computed: {
+        ...mapGetters(["funds"]),
+
+        canUserBuyStock() {
+            if (this.quantity <= 0 || !Number.isInteger(this.quantity) || this.quantity * this.stock.price > this.funds) {
+                return false
+            }
+
+            return true
+        },
+
+        canUserSellStock() {
+            if (this.quantity <= 0) {
+                return false
+            }
+
+            return true
+        }
+    },
     methods: {
         ...mapActions({buyStockAction: "buyStock", sellStockAction: "sellStock"}),
         buyStock() {
