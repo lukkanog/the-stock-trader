@@ -55,7 +55,7 @@ export default {
             return state.funds
         },
         portfolioQuantity(state) {
-            return state.stocks.length
+            return state.stocks.reduce((total, stock) => total + stock.quantity, 0)
         }
     }
 }
