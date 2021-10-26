@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <nav-header/>
-    <v-content>
+    <v-main>
       <v-container class="pt-10">
         <router-view/>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
