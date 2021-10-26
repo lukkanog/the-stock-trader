@@ -53,6 +53,9 @@ export default {
         },
         funds(state) {
             return state.funds
+        },
+        portfolioQuantity(state) {
+            return state.stocks.length
         }
     }
 }
