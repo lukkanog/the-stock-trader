@@ -13,8 +13,8 @@
             max-width="64"
             
         />
-        <v-text class="text-h5 mt-5">Nada por aqui...</v-text>
-        <v-text class="font-weight-thin">{{ message }}</v-text>
+        <p class="text-h5 mt-5">Nada por aqui...</p>
+        <p class="font-weight-thin">{{ message }}</p>
     </v-layout>
 </template>
 
