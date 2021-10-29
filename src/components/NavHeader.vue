@@ -28,7 +28,7 @@
                     </template>
                     <v-list>
                         <v-list-item>
-                            <v-list-item-title>Salvar dados</v-list-item-title>
+                            <v-list-item-title @click="saveData">Salvar dados</v-list-item-title>
                         </v-list-item>
                         <v-list-item>
                             <v-list-item-title>Carregar dados</v-list-item-title>
