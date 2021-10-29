@@ -15,7 +15,13 @@
             <v-spacer/>
 
             <v-toolbar-items class="menu-items" color="transparent">
-                <v-btn depressed class="body-2"> Finalizar dia </v-btn>
+                <v-btn 
+                    depressed 
+                    class="body-2"
+                    @click="endDay"
+                > 
+                    Finalizar dia 
+                </v-btn>
                 <v-menu open-on-hover dark transition="scale-transition" :offset-y="true">
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn depressed class="body-2" v-on="on" v-bind="attrs" > Salvar & carregar </v-btn>
@@ -38,13 +44,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import stocksPricesMixin from "@/mixins/stocksPricesMixin"
 
 export default {
     name: "NavHeader",
-    computed: {
-        ...mapGetters(["funds"])
-    }
+    mixins: [stocksPricesMixin],
 }
 </script>
 
