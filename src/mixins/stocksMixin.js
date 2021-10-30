@@ -5,7 +5,7 @@ export default {
         ...mapGetters(["funds", "stockPortfolio", "stocks"])
     },
     methods: {
-        ...mapActions(["randomizeStocks"]),
+        ...mapActions(["randomizeStocks", "loadData"]),
         endDay() {
             this.randomizeStocks();
         },
@@ -15,6 +15,9 @@ export default {
                 stockPortfolio: this.stockPortfolio,
                 stocks: this.stocks
             })
+        },
+        fetchData() {
+            this.loadData();
         }
     },
     

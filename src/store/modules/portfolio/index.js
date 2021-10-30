@@ -31,6 +31,10 @@ export default {
 
             const stockToBeRemoved = state.stocks.indexOf(stockInPortfolio)
             state.stocks.splice(stockToBeRemoved, 1)
+        },
+        setPortfolio(state, portfolio) {
+            state.funds = portfolio.funds
+            state.stocks = portfolio.stockPortfolio ? portfolio.stockPortfolio : []
         }
     },
     actions: {

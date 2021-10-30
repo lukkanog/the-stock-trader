@@ -31,7 +31,7 @@
                             <v-list-item-title @click="saveData">Salvar dados</v-list-item-title>
                         </v-list-item>
                         <v-list-item>
-                            <v-list-item-title>Carregar dados</v-list-item-title>
+                            <v-list-item-title @click="loadData">Carregar dados</v-list-item-title>
                         </v-list-item>
                     </v-list>
                 </v-menu>
@@ -44,11 +44,11 @@
 </template>
 
 <script>
-import stocksPricesMixin from "@/mixins/stocksPricesMixin"
+import stocksMixin from "@/mixins/stocksMixin"
 
 export default {
     name: "NavHeader",
-    mixins: [stocksPricesMixin],
+    mixins: [stocksMixin],
 }
 </script>
 
