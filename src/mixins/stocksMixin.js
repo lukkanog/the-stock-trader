@@ -5,7 +5,7 @@ export default {
         ...mapGetters(["funds", "stockPortfolio", "stocks"])
     },
     methods: {
-        ...mapActions(["randomizeStocks", "loadData"]),
+        ...mapActions(["randomizeStocks", "loadData", "successToaster"]),
         saveData() {
             this.$http.put("data.json", {
                 funds: this.funds,
@@ -19,6 +19,7 @@ export default {
         endDay() {
             this.randomizeStocks()
             this.saveData()
+            this.successToaster("Dia finalizado com sucesso! Alterações de preços aplicadas às ações.")
         },
     },
     
