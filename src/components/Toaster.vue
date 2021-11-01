@@ -3,8 +3,8 @@
     v-model="toaster.show"
     :color="toaster.type"
     timeout="4000"
-    vertical
-
+    bottom
+    right
   >
     {{ toaster.message }}
   </v-snackbar>
