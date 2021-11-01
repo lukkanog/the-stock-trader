@@ -22,19 +22,6 @@
                 > 
                     Finalizar dia 
                 </v-btn>
-                <v-menu open-on-hover dark transition="scale-transition" :offset-y="true">
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-btn depressed class="body-2" v-on="on" v-bind="attrs" > Salvar & carregar </v-btn>
-                    </template>
-                    <v-list>
-                        <v-list-item>
-                            <v-list-item-title @click="saveData">Salvar dados</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-title @click="loadData">Carregar dados</v-list-item-title>
-                        </v-list-item>
-                    </v-list>
-                </v-menu>
                 <v-btn depressed class="body-2"> Saldo: {{ funds | money }} </v-btn>
             </v-toolbar-items>
             
