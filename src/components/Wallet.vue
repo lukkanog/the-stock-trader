@@ -5,17 +5,17 @@
         icon="wallet.png"
     >
         <template v-slot:additionalInfo>
-            <v-card-text class="pb-0">
-                <small class="font-weight-light">
-                    Quantidade de ações compradas: 
-                </small>
-                {{ portfolioQuantity }}
-            </v-card-text>
-            <v-card-text class="pt-1 pb-0">
+            <v-card-text class="py-0">
                 <small class="font-weight-light">
                     Saldo: 
                 </small>
                 {{ funds | money}}
+            </v-card-text>
+            <v-card-text class="pt-0">
+                <small class="font-weight-light">
+                    Quantidade de ações compradas: 
+                </small>
+                {{ portfolioQuantity }}
             </v-card-text>
         </template>
     </card>

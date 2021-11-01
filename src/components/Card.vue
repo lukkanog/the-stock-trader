@@ -1,7 +1,6 @@
 <template>
   <router-link :to="route" style="text-decoration: none;">
     <v-card elevation="5" class="rounded" style="height: 100%">
-        <slot name="additionalInfo"></slot>
         <v-card-title class="text-h6">
             <v-img 
                 :src="require(`@/assets/${icon}`)"
@@ -12,6 +11,7 @@
             />
             {{ title }}	
         </v-card-title>
+        <slot name="additionalInfo"></slot>
     </v-card>
     </router-link>
 </template>

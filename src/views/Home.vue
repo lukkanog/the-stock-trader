@@ -5,17 +5,17 @@
       <span class="font-weight-light">Trader</span> 
     </h2>
     <v-row justify="space-around" align="stretch">
-      <v-col xl="3" lg="3" sm="12" xs="12">
+      <v-col cols="12" lg="3" sm="6">
         <wallet />
       </v-col>
-      <v-col xl="3" lg="3" sm="12" xs="12">
+      <v-col cols="12" lg="3" sm="6">
         <card 
           route="/stocks"
           title="Ações"
           icon="stocks.png"
         />
       </v-col>
-      <v-col xl="3" lg="3" sm="2" xs="12">
+      <v-col cols="12" lg="3" sm="6">
         <card 
           route="/"
           title="Finalizar Dia"
