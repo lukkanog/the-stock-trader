@@ -6,6 +6,7 @@
         <transition name="slide" mode="out-in">
           <router-view/>
         </transition>
+        <toaster />
       </v-container>
     </v-main>
   </v-app>
@@ -13,11 +14,13 @@
 
 <script>
 import NavHeader from "./components/NavHeader.vue"
+import Toaster from "./components/Toaster.vue"
 
 export default {
   name: 'App',
   components: {
-    NavHeader
+    NavHeader,
+    Toaster
   },
   mounted() {
     this.$store.dispatch("initStocks")

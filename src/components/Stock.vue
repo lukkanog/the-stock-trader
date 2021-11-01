@@ -80,7 +80,11 @@ export default {
         }
     },
     methods: {
-        ...mapActions({buyStockAction: "buyStock", sellStockAction: "sellStock"}),
+        ...mapActions({
+            buyStockAction: "buyStock", 
+            sellStockAction: "sellStock",
+            successToaster: "successToaster"
+        }),
         buyStock() {
             const order = {
                 stockId: this.stock.id,
@@ -89,6 +93,8 @@ export default {
             }
 
             this.buyStockAction(order)
+
+            this.successToaster(`Você comprou ${this.quantity} ações ${this.stock.name}`)
 
             this.quantity = 0
         },
@@ -100,6 +106,8 @@ export default {
             }
 
             this.sellStockAction(order)
+
+            this.successToaster(`Você vendeu ${this.quantity} ações ${this.stock.name}`)
             
             this.quantity = this.stock.quantity -= this.quantity
         }
