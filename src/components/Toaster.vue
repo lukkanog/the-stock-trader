@@ -20,9 +20,6 @@ export default {
             toaster: "toaster"
         })
     },
-    mounted() {
-        console.log(this.toaster)
-    }
 }
 </script>
 
