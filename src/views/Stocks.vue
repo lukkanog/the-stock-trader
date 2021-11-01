@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters, mapActions } from "vuex"
 import Stock from "../components/Stock.vue"
 import EmptyState from "../components/EmptyState.vue"
 
@@ -18,6 +18,12 @@ export default {
   },
   computed: {
     ...mapGetters(["stocks"])
+  },
+  methods: {
+    ...mapActions(["initStocks", "loadData"]),
+  },
+  mounted() {
+    this.loadData();
   }
 }
 </script>

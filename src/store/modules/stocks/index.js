@@ -1,4 +1,4 @@
-import stocks from "@/data/stocks"
+import defaultStocks from "@/data/stocks"
 
 export default {
     state: {
@@ -19,7 +19,7 @@ export default {
             commit("buyStock", order)
         },
         initStocks({commit}) {
-            commit("setStocks", stocks)
+            commit("setStocks", defaultStocks)
         },
         randomizeStocks({commit}) {
             commit("randomizeStocks")

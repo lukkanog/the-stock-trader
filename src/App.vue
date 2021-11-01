@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
 import NavHeader from "./components/NavHeader.vue"
 import Toaster from "./components/Toaster.vue"
 
@@ -22,8 +23,11 @@ export default {
     NavHeader,
     Toaster
   },
+  methods: {
+    ...mapActions(["initStocks", "loadData"]),
+  },
   mounted() {
-    this.$store.dispatch("initStocks")
+    this.loadData();
   }
 };
 </script>

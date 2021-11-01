@@ -46,6 +46,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex"
+import stocksMixin from "@/mixins/stocksMixin"
 
 export default {
     props: {
@@ -57,6 +58,7 @@ export default {
             default: false
         }
     },
+    mixins: [stocksMixin],
     data: () => ({
         quantity: 0,
     }),
@@ -83,6 +85,7 @@ export default {
         ...mapActions({
             buyStockAction: "buyStock", 
             sellStockAction: "sellStock",
+            saveDataAction: "saveData",
             successToaster: "successToaster"
         }),
         buyStock() {
@@ -93,6 +96,8 @@ export default {
             }
 
             this.buyStockAction(order)
+
+            this.saveData()
 
             this.successToaster(`Você comprou ${this.quantity} ações ${this.stock.name}`)
 
@@ -106,6 +111,8 @@ export default {
             }
 
             this.sellStockAction(order)
+
+            this.saveData()
 
             this.successToaster(`Você vendeu ${this.quantity} ações ${this.stock.name}`)
             

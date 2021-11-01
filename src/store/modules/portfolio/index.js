@@ -40,7 +40,7 @@ export default {
     actions: {
         sellStock({commit}, order) {
             commit("sellStock", order)
-        }
+        },
     },
     getters: {
         stockPortfolio(state, getters) {

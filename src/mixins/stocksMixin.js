@@ -6,9 +6,6 @@ export default {
     },
     methods: {
         ...mapActions(["randomizeStocks", "loadData"]),
-        endDay() {
-            this.randomizeStocks();
-        },
         saveData() {
             this.$http.put("data.json", {
                 funds: this.funds,
@@ -18,7 +15,11 @@ export default {
         },
         fetchData() {
             this.loadData();
-        }
+        },
+        endDay() {
+            this.randomizeStocks()
+            this.saveData()
+        },
     },
     
 }
