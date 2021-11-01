@@ -9,8 +9,6 @@ export default {
             state.show = true;
             state.message = payload.message;
             state.type = payload.type;
-
-            console.log(state)
         },
         
     },
