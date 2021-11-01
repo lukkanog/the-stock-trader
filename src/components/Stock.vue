@@ -1,5 +1,5 @@
 <template>
-    <v-flex class="pr-3 pb-3" xs12 md6 lg4>
+    <v-flex class="px-3 pb-3" xs12 md6 lg4>
         <v-card class="grey darken-3 white--text" tile>
             <v-card-title class="headline">
                <strong>{{stock.name}} <small class="font-weight-light">{{stock.price | money}}</small></strong>
