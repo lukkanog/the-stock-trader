@@ -5,7 +5,7 @@
             <span class="font-weight-light">Trader</span> 
         </v-app-bar-title>
 
-        <v-toolbar v-if="!this.$vuetify.breakpoint.sm" flat>
+        <v-toolbar v-if="!this.$vuetify.breakpoint.sm && !this.$vuetify.breakpoint.xs" flat>
             <v-toolbar-items class="menu-items">
                 <v-btn depressed to="/"> Início </v-btn>
                 <v-btn depressed to="/portfolio"> Portfólio </v-btn>
