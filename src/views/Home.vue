@@ -17,9 +17,9 @@
       </v-col>
       <v-col cols="12" lg="3" sm="6">
         <card 
-          route="/"
-          title="Finalizar Dia"
-          icon="check.png"
+          title="GitHub do projeto"
+          icon="github.png"
+          redirectTo="https://github.com/lukkanog/the-stock-trader"
         />
       </v-col>
     </v-row>

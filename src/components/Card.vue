@@ -1,6 +1,9 @@
 <template>
-  <router-link :to="route" style="text-decoration: none;">
-    <v-card elevation="5" class="rounded" style="height: 100%">
+  <router-link 
+        :to="route" 
+        style="text-decoration: none;"
+    >
+    <v-card elevation="5" class="rounded" style="height: 100%" @click="handleClick">
         <v-card-title class="text-h6">
             <v-img 
                 :src="require(`@/assets/${icon}`)"
@@ -20,11 +23,6 @@
 export default {
     name: 'Card',
     props: {
-        route: {
-            type: String,
-            required: true,
-            default: "/"
-        },
         title: {
             type: String,
             required: true,
@@ -34,6 +32,22 @@ export default {
             type: String,
             required: true,
             default: "stocks.png"
+        },
+        route: {
+            type: String,
+            required: false,
+            default: "/"
+        },
+        redirectTo: {
+            type: String,
+            required: false,
+        }
+    },
+    methods: {
+        handleClick() {
+            if (this.redirectTo) {
+                window.location.href = this.redirectTo;
+            }
         }
     }
 }
