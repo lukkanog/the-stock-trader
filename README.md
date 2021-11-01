@@ -9,6 +9,7 @@ https://the-stock-trader-lukkanog.vercel.app/
 - ![Image](https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=white)
 - Vuex
 - Vue Router
+- Axios
 
 ## Como executar em ambiente de desenvolvimento local
 - Clone esse repositório;
