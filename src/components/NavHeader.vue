@@ -29,7 +29,6 @@
         <template v-else >
             <v-spacer />
             <v-menu 
-                
                 dark 
                 transition="slide-y-transition" 
                 :offset-y="true"
@@ -55,6 +54,23 @@
                     <v-list-item>
                         <v-list-item-title>
                             <v-btn depressed to="/stocks"> Ações </v-btn>
+                        </v-list-item-title>
+                    </v-list-item>
+                    <v-spacer />
+                    <v-list-item>
+                        <v-list-item-title>
+                            <v-btn 
+                                depressed 
+                                class="body-2"
+                                @click="endDay"
+                            > 
+                                Finalizar dia 
+                            </v-btn>
+                        </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-title>
+                            <v-btn depressed class="body-2"> Saldo: {{ funds | money }} </v-btn>
                         </v-list-item-title>
                     </v-list-item>
                 </v-list>
