@@ -5,13 +5,14 @@ export default {
         ...mapGetters(["funds", "stockPortfolio", "stocks"])
     },
     methods: {
-        ...mapActions(["randomizeStocks", "loadData", "successToaster"]),
+        ...mapActions(["randomizeStocks", "loadData", "successToaster", "errorToaster"]),
         saveData() {
             this.$http.put("data.json", {
                 funds: this.funds,
                 stockPortfolio: this.stockPortfolio,
                 stocks: this.stocks
             })
+            .catch(() => this.errorToaster("Ocorreu um erro ao salvar os dados."))
         },
         fetchData() {
             this.loadData();
