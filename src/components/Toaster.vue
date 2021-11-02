@@ -7,6 +7,14 @@
     right
   >
     {{ toaster.message }}
+    <v-btn
+      slot="action"
+      color="white"
+      @click="toaster.show = false"
+      icon
+    >
+      <v-icon>mdi-close-circle</v-icon>
+    </v-btn>
   </v-snackbar>
 </template>
 
