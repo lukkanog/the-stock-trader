@@ -89,45 +89,45 @@ export default {
             successToaster: "successToaster"
         }),
         buyStock() {
-            const order = {
-                stockId: this.stock.id,
-                stockPrice: this.stock.price,
-                quantity: this.quantity
-            }
+          const order = {
+              stockId: this.stock.id,
+              stockPrice: this.stock.price,
+              quantity: this.quantity
+          }
 
-            this.buyStockAction(order)
+          this.buyStockAction(order)
 
-            this.saveData()
+          this.saveData()
 
-            this.successToaster(`Você comprou ${this.quantity} ações ${this.stock.name}`)
+          this.successToaster(`Você comprou ${this.quantity} ações ${this.stock.name}`)
 
-            this.quantity = 0
+          this.quantity = 0
         },
         sellStock() {
-            const order = {
-                stockId: this.stock.id,
-                stockPrice: this.stock.price,
-                quantity: this.quantity
-            }
+          const order = {
+              stockId: this.stock.id,
+              stockPrice: this.stock.price,
+              quantity: this.quantity
+          }
 
-            this.sellStockAction(order)
+          this.sellStockAction(order)
 
-            this.saveData()
+          this.saveData()
 
-            this.successToaster(`Você vendeu ${this.quantity} ações ${this.stock.name}`)
-            
-            this.quantity = this.stock.quantity -= this.quantity
+          this.successToaster(`Você vendeu ${this.quantity} ações ${this.stock.name}`)
+          
+          this.quantity = this.stock.quantity -= this.quantity
         }
     },
     mounted() {
-        if (this.stock.portfolio) {
-            this.quantity = this.stock.quantity
-        }
+      if (this.stock.portfolio) {
+          this.quantity = this.stock.quantity
+      }
     },
     updated() {
-        if (this.stock.portfolio && this.quantity > this.stock.quantity) {
-            this.quantity = this.stock.quantity
-        }
+      if (this.stock.portfolio && this.quantity > this.stock.quantity) {
+          this.quantity = this.stock.quantity
+      }
     },
 }
 </script>

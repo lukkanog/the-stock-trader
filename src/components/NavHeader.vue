@@ -15,13 +15,7 @@
             <v-spacer/>
 
             <v-toolbar-items class="menu-items" color="transparent">
-                <v-btn 
-                    depressed 
-                    class="body-2"
-                    @click="endDay"
-                > 
-                    Finalizar dia 
-                </v-btn>
+                <v-btn depressed to="/end-of-the-day"> Finalizar Dia </v-btn>
                 <v-btn depressed class="body-2"> Saldo: {{ funds | money }} </v-btn>
             </v-toolbar-items>
         </v-toolbar>
@@ -59,13 +53,7 @@
                     <v-spacer />
                     <v-list-item>
                         <v-list-item-title>
-                            <v-btn 
-                                depressed 
-                                class="body-2"
-                                @click="endDay"
-                            > 
-                                Finalizar dia 
-                            </v-btn>
+                            <v-btn depressed to="/end-of-the-day"> Finalizar dia </v-btn>
                         </v-list-item-title>
                     </v-list-item>
                     <v-list-item>

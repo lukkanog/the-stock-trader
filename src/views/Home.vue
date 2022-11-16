@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Wallet from '../components/Wallet.vue'
+import Wallet from '@/components/Wallet.vue'
 import Card from '@/components/Card'
 
   export default {

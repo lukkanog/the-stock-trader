@@ -10,8 +10,8 @@
 
 <script>
 import { mapGetters } from "vuex"
-import Stock from "../components/Stock.vue"
-import EmptyState from "../components/EmptyState.vue"
+import Stock from "@/components/Stock.vue"
+import EmptyState from "@/components/EmptyState.vue"
 
 export default {
     name: 'Portfolio',

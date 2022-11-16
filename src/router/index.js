@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Portfolio from '../views/Portfolio.vue'
 import Stocks from '../views/Stocks.vue'
+import FinishDay from '../views/FinishDay.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/stocks',
     name: 'Stocks',
     component: Stocks
+  },
+  {
+    path: '/end-of-the-day',
+    name: 'EndOfTheDay',
+    component: FinishDay
   }
 ]
 
